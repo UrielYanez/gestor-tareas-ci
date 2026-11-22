@@ -1,6 +1,8 @@
 const request = require('supertest');
 const app = require('../src/app');
+
 beforeEach(() => app.locals.reiniciar());
+
 describe('Salud y métricas', () => {
     test('GET /health responde ok', async () => {
         const res = await request(app).get('/health');
